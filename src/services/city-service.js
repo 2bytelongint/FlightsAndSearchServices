@@ -48,6 +48,19 @@ class CityService {
         }
     }
 
+    async getAllCity(filter){
+        try {
+            const city = await this.cityRepository.getAllCity({
+                name : filter.name
+            });
+            return city;
+            
+        } catch (error) {
+            console.log("Something went wrong in the getter of city-service level");
+            throw {error};
+        }
+    }
+
 }
 
 
